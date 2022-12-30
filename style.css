@@ -1,0 +1,183 @@
+/* https://developer.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/ */
+.offscreen {
+  clip-path: inset(100%);
+  clip: rect(1px 1px 1px 1px); /* IE 6/7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; /* added line */
+  width: 1px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* font is loaded locally. You can use these fonts in the template */
+@font-face {
+  font-family: Oswald;
+  src: url("./fonts/Oswald/Oswald-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Oswald;
+  src: url("./fonts/Oswald/Oswald-ExtraLight.ttf") format("truetype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Oswald;
+  src: url("./fonts/Oswald/Oswald-Light.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Oswald;
+  src: url("./fonts/Oswald/Oswald-Bold.ttf") format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Lato;
+  src: url("./fonts/Lato/Lato-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Lato;
+  src: url("./fonts/Lato/Lato-Light.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Lato;
+  src: url("./fonts/Lato/Lato-Bold.ttf") format("truetype");
+  font-weight: 600;
+}
+
+body {
+  font-weight: 300;
+  font-family: "Oswald", sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: lightgrey;
+}
+
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.main-header,
+.logo-menu-container,
+.main-content {
+  width: 75vw;
+}
+
+.header-container {
+  color: white;
+  position: absolute;
+  top: 2%;
+}
+
+.header-banner-container {
+  height: 40vw;
+  overflow: hidden;
+}
+
+.header-banner-image {
+  filter: brightness(50%);
+  width: 100vw;
+}
+
+.main-header,
+.logo-menu-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-header {
+  position: relative;
+}
+
+.account,
+.opening-hours,
+time {
+  padding: 1rem;
+}
+
+.menu-item {
+  display: inline-block;
+}
+
+.menu-item a {
+  list-style: none;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding-right: 1rem;
+}
+
+.banner-container {
+  padding-top: 2%;
+  text-align: center;
+}
+
+.banner-container > button {
+  background-color: rgb(76, 241, 76);
+  border-radius: 999px;
+  border: none;
+  box-sizing: border-box;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  padding: 8px 28px;
+  width: fit-content;
+}
+
+main {
+  text-align: center;
+}
+
+.main-content {
+  display: inline-block;
+}
+
+.box-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.box-container > .box {
+  color: green;
+  padding: 2%;
+  width: 15%;
+  background-color: rgb(232, 232, 232);
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+}
+
+.welcome-text {
+  display: inline-block;
+  width: 50%;
+}
+
+.lower-banner {
+  height: 30vw;
+  background-image: url("img/banner_image_2.jpg");
+  background-size: 110%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+footer {
+  height: 20vw;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
