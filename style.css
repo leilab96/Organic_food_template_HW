@@ -60,39 +60,35 @@
 }
 
 body {
+  width: 100vw;
   font-weight: 300;
   font-family: "Oswald", sans-serif;
-  padding: 0;
   margin: 0;
   background-color: lightgrey;
 }
 
-header {
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-
-.main-header,
-.logo-menu-container,
-.main-content {
-  width: 75vw;
-}
-
 .header-container {
+  height: 45vw;
   color: white;
+  position: relative;
+}
+
+.header-content {
+  width: 80%;
   position: absolute;
-  top: 2%;
+  left: 10%;
 }
 
-.header-banner-container {
-  height: 40vw;
+.header-image-container {
+  height: 100%;
   overflow: hidden;
+  position: absolute;
 }
 
-.header-banner-image {
-  filter: brightness(50%);
+.header-image {
   width: 100vw;
+  filter: brightness(50%);
+  object-fit: cover;
 }
 
 .main-header,
@@ -103,6 +99,15 @@ header {
 
 .main-header {
   position: relative;
+}
+
+.main-header > .border {
+  position: absolute;
+  width: 100vw;
+  left: -10vw;
+  bottom: 0;
+  height: 1.5pt;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .account,
@@ -123,12 +128,14 @@ time {
   padding-right: 1rem;
 }
 
-.banner-container {
-  padding-top: 2%;
-  text-align: center;
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem;
 }
 
-.banner-container > button {
+.logo-container > button {
   background-color: rgb(76, 241, 76);
   border-radius: 999px;
   border: none;
@@ -147,24 +154,40 @@ main {
 
 .main-content {
   display: inline-block;
+  width: 60vw;
+  margin: 0, auto;
 }
 
 .box-container {
   display: flex;
   justify-content: space-around;
+  margin-bottom: 5%;
 }
 
 .box-container > .box {
   color: green;
   padding: 2%;
-  width: 15%;
+  width: 20%;
   background-color: rgb(232, 232, 232);
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
 }
 
+h2 {
+  font-size: 2rem;
+}
+
+.box > h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.4rem;
+}
+
 .welcome-text {
   display: inline-block;
-  width: 50%;
+  width: 60%;
+  padding: 1rem;
 }
 
 .lower-banner {
