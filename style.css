@@ -67,8 +67,9 @@ body {
   background-color: lightgrey;
 }
 
+/* a header része */
 .header-container {
-  height: 45vw;
+  height: 500px;
   color: white;
   position: relative;
 }
@@ -79,25 +80,17 @@ body {
   left: 10%;
 }
 
-.header-image-container {
-  height: 100%;
-  overflow: hidden;
-  position: absolute;
-}
-
 .header-image {
+  height: 100%;
   width: 100vw;
   filter: brightness(50%);
+  position: absolute;
   object-fit: cover;
 }
 
-.main-header,
-.logo-menu-container {
+.main-header {
   display: flex;
   justify-content: space-between;
-}
-
-.main-header {
   position: relative;
 }
 
@@ -116,26 +109,49 @@ time {
   padding: 1rem;
 }
 
+.toggle-label,
+.menu-checkbox {
+  display: none;
+}
+
+.logo-menu-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-search-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-magnifying-glass {
+  padding-top: 20px;
+  padding-left: 5px;
+}
+
 .menu-item {
   display: inline-block;
 }
 
-.menu-item a {
-  list-style: none;
-  color: white;
+.menu-item > a {
   text-decoration: none;
+  color: white;
   font-weight: 500;
-  padding-right: 1rem;
+  padding: 10px;
 }
 
-.logo-container {
+.menu-item:hover {
+  border-bottom: 2px solid transparent;
+  background-color: rgba(189, 198, 233, 0.56);
+}
+
+.shop-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5rem;
 }
 
-.logo-container > button {
+.shop-container > button {
   background-color: rgb(76, 241, 76);
   border-radius: 999px;
   border: none;
@@ -144,9 +160,10 @@ time {
   text-align: center;
   text-transform: uppercase;
   font-family: "Oswald", sans-serif;
-  padding: 8px 28px;
-  width: fit-content;
+  padding: 8px 50px;
 }
+
+/* a fő része */
 
 main {
   text-align: center;
@@ -154,7 +171,7 @@ main {
 
 .main-content {
   display: inline-block;
-  width: 60vw;
+  width: 65vw;
   margin: 0, auto;
 }
 
@@ -167,7 +184,7 @@ main {
 .box-container > .box {
   color: green;
   padding: 2%;
-  width: 20%;
+  width: 200px;
   background-color: rgb(232, 232, 232);
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
 }
@@ -177,7 +194,7 @@ h2 {
 }
 
 .box > h3 {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 
 p {
@@ -186,21 +203,74 @@ p {
 
 .welcome-text {
   display: inline-block;
-  width: 60%;
+  width: 80%;
   padding: 1rem;
 }
 
 .lower-banner {
   height: 30vw;
   background-image: url("img/banner_image_2.jpg");
-  background-size: 110%;
+  background-size: 100%;
   background-repeat: no-repeat;
   overflow: hidden;
 }
 
 footer {
-  height: 20vw;
+  font-size: 1rem;
+  height: 10vw;
   display: flex;
   align-items: flex-start;
   justify-content: center;
+}
+
+/* reszponzivitás */
+@media (max-width: 1200px) {
+  .box-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box-container > .box {
+    margin-bottom: 5%;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .menu-search-container {
+    position: relative;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    position: absolute;
+    right: 25px;
+    top: 10px;
+  }
+
+  .menu-item {
+    width: 100px;
+    height: 25px;
+    padding: 5px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .menu-container {
+    display: none;
+  }
+
+  .toggle-label {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+
+  .menu-checkbox:checked ~ .menu-container {
+    display: block;
+  }
 }
